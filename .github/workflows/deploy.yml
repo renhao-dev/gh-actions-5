@@ -25,7 +25,7 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: mongo:noble
-          options: -p 27017:27017 -d -e MONGO_INITDB_ROOT_USERNAME=${{ env.MONGODB_USERNAME }} -e MONGO_INITDB_ROOT_PASSWORD=${{ env.MONGODB_PASSWORD }}
+          options: -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=${{ env.MONGODB_USERNAME }} -e MONGO_INITDB_ROOT_PASSWORD=${{ env.MONGODB_PASSWORD }}
       - name: Wait for db to be alive
         run: npx wait-on http://127.0.0.1:27017
       - name: Run server
