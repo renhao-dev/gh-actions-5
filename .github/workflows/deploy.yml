@@ -13,11 +13,11 @@ jobs:
       PORT: 8080 
     services:
       mongodb:
-        image: mongo:8.0
+        image: mongo
         env:
-          MONGO_INITDB_ROOT_USERNAME: ${{ env.MONGODB_USERNAME }}
-          MONGO_INITDB_ROOT_PASSWORD: ${{ env.MONGODB_PASSWORD }}
-          MONGO_INITDB_DATABASE: ${{ env.MONGODB_DB_NAME }}
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: root
+          MONGO_INITDB_DATABASE: ghademo
         ports:
           - 27017:27017
         options: >-
