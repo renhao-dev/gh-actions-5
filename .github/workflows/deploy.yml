@@ -13,10 +13,10 @@ jobs:
       PORT: 8080 
     services:
       mongodb:
-        image: mongo
+        image: mongo:latest
         env:
-          MONGO_INITDB_ROOT_USERNAME: root
-          MONGO_INITDB_ROOT_PASSWORD: root
+          MONGO_INITDB_ROOT_USERNAME: admin
+          MONGO_INITDB_ROOT_PASSWORD: admin
         ports:
           - 27017:27017
         options: >-
