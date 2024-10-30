@@ -17,7 +17,7 @@ jobs:
         env:
           MONGO_INITDB_ROOT_USERNAME: ${{ env.MONGODB_USERNAME }}
           MONGO_INITDB_ROOT_PASSWORD: ${{ env.MONGODB_PASSWORD }}
-          MONGO_INItDB_DATABASE: ${{ env.MONGODB_DB_NAME }}
+          MONGO_INITDB_DATABASE: ${{ env.MONGODB_DB_NAME }}
         ports:
           - 27017:27017
         options: >-
