@@ -16,7 +16,6 @@ jobs:
       MONGODB_DB_NAME: ${{ secrets.MONGODB_DB_NAME }}
       MONGODB_PROTOCOL_URL: ${{ secrets.MONGODB_PROTOCOL_URL }}
       PORT: 8080
-    #doesn't work 
     services:
       mongodb:
         image: ${{ (matrix.environment=='db-local') && 'mongo:latest' || '' }}
