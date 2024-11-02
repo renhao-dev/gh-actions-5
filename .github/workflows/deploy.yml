@@ -5,12 +5,16 @@ on:
       - master
 jobs:
   test:
+    strategy:
+      matrix:
+        environment: [db-local, db-atlas]
+    environment: ${{ matrix.environment }}
     env:
-      MONGODB_CLUSTER_ADDRESS: 127.0.0.1
-      MONGODB_USERNAME: root
-      MONGODB_PASSWORD: secret
-      MONGODB_DB_NAME: gha-demo
-      MONGODB_PROTOCOL_URL: mongodb
+      MONGODB_CLUSTER_ADDRESS: ${{ secrets.MONGODB_CLUSTER_ADDRESS }}
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
+      MONGODB_DB_NAME: ${{ secrets.MONGODB_DB_NAME }}
+      MONGODB_PROTOCOL_URL: ${{ secrets.MONGODB_PROTOCOL_URL }}
       PORT: 8080
 
     #doesn't work 
