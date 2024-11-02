@@ -19,7 +19,7 @@ jobs:
     #doesn't work 
     services:
       mongodb:
-        image: mongo:latest
+        image: ${{ (matrix.environment=='db-local') && 'mongo:latest' || '' }}
         env:
           MONGO_INITDB_ROOT_USERNAME: ${{ env.MONGODB_USERNAME }}
           MONGO_INITDB_ROOT_PASSWORD: ${{ env.MONGODB_PASSWORD }}
